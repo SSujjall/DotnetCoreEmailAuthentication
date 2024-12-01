@@ -1,4 +1,4 @@
-﻿using Service.Models;
+﻿using Service.Models.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +9,6 @@ namespace Service.Services.IService
 {
     public interface IEmailService
     {
-        Task SendEmail(EmailMessage emailData);
+        void SendEmail(EmailMessage message);
     }
 }

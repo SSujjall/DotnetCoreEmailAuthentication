@@ -1,0 +1,43 @@
+﻿@model WebAppMVC.Models.Register
+<style>
+    .form-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 75vh;
+    }
+
+        .form-container form {
+            width: 100%;
+            max-width: 25rem;
+            padding: 1.5rem;
+        }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-control {
+        min-height: 2.5rem;
+    }
+</style>
+
+<div class="form-container">
+    <form asp-action="Register" class="border border-1 d-flex flex-column rounded-3 shadow-sm">
+        <div class="form-group">
+            <label asp-for="Email" class="form-label">Email</label>
+            <input type="text" asp-for="Email" placeholder="Enter your email" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <label asp-for="Username" class="form-label">Username</label>
+            <input type="text" asp-for="Username" placeholder="Enter your username" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <label asp-for="Password" class="form-label">Password</label>
+            <input type="password" asp-for="Password" placeholder="Enter your password" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary w-100">Register</button>
+        </div>
+    </form>
+</div>

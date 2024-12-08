@@ -1,0 +1,67 @@
+﻿@model WebAppMVC.Models.Login
+<style>
+    .form-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 75vh;
+    }
+
+        .form-container form {
+            width: 100%;
+            max-width: 25rem;
+            padding: 1.5rem;
+        }
+
+    .form-group {
+        margin-bottom: 15px;
+        position: relative;
+    }
+
+    .form-control {
+        min-height: 2.5rem;
+        padding-right: 40px; /* Make space for the icon */
+    }
+
+    .password-visibility-toggle {
+        cursor: pointer;
+        user-select: none;
+        color: #6c757d;
+        float: right;
+        margin-top: -9.5%;
+        margin-right: 10px;
+    }
+</style>
+
+<div class="form-container">
+    <form asp-action="Login" class="border border-1 d-flex flex-column rounded-3 shadow-sm">
+        <div class="form-group">
+            <label asp-for="Username" class="form-label">Username</label>
+            <input type="text" asp-for="Username" placeholder="Enter your username" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <label asp-for="Password" class="form-label">Password</label>
+            <input type="password" asp-for="Password" placeholder="Enter your password" id="passwordField" class="form-control" required />
+            <span class="material-symbols-outlined password-visibility-toggle input-group-addon" id="visibilityIcon" onclick="togglePasswordVisibility()">
+                visibility
+            </span>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    function togglePasswordVisibility() {
+        const passwordField = document.getElementById('passwordField');
+        const visibilityIcon = document.getElementById('visibilityIcon');
+        if (passwordField.type === 'password') {
+            passwordField.type = 'text';
+            visibilityIcon.textContent = 'visibility_off';
+        } else {
+            passwordField.type = 'password';
+            visibilityIcon.textContent = 'visibility';
+        }
+    }
+</script>

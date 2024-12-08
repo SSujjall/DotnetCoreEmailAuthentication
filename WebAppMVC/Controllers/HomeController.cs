@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using WebApp.Models;
+using WebAppMVC.Models;
 
-namespace WebApp.Controllers
+namespace WebAppMVC.Controllers
 {
     public class HomeController : Controller
     {
@@ -13,12 +13,18 @@ namespace WebApp.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult RegisterView()
         {
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult LoginView()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Login()
         {
             return View();
         }
